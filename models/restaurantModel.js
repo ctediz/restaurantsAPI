@@ -2,7 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var restaurantModel = new Schema({
-    url: {
+    URL: {
+        type: String
+    },
+    name: {
         type: String
     },
     address: {
@@ -11,7 +14,10 @@ var restaurantModel = new Schema({
     city: {
         type: String
     },
-    type: {
+    type_of_food: {
+        type: String
+    },
+    outcode: {
         type: String
     },
     postcode: {
