@@ -1,4 +1,5 @@
 var restaurantController = function(Restaurant) {
+
     // Base Route
     var post = function(req, res) {
         var restaurant = new Restaurant(req.body);
@@ -8,7 +9,8 @@ var restaurantController = function(Restaurant) {
     };
 
     var getAll = function(req, res) {
-        var query = {};
+        var filter = require('../helpers/restaurantFilters');
+        var query = filter.filter(req);
         Restaurant.find(query, function(err, restaurants) {
             if(err) {
                 console.log(err);
